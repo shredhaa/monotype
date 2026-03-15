@@ -11,7 +11,8 @@ function sketchPinch(p) {
   const POS_SMOOTH = 0.1;
 
   p.preload = function() {
-    bodySegmentation = ml5.bodySegmentation("BodyPix", { flipped: true });
+    bodySegmentation = ml5.bodySegmentation("BodyPix", { flipped: true,  internalResolution: "low",
+    segmentationThreshold: 0.4});
     handPose = ml5.handPose({ flipped: true });
   };
 
