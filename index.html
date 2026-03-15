@@ -14,9 +14,9 @@
       --purple: #e052ff;
       --green: #00c800;
     }
-
+ 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
     body {
       background: var(--black);
       color: var(--black);
@@ -26,13 +26,13 @@
       width: 100vw;
       cursor: none;
     }
-
+ 
     /* Custom cursor */
     #cursor {
       position: fixed;
       width: 10px;
       height: 10px;
-      background: rgb(0, 0, 0);
+      background: white;
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
@@ -40,7 +40,7 @@
       transition: transform 0.1s;
       mix-blend-mode: difference;
     }
-
+ 
     /* Page wrapper */
     #page {
       position: relative;
@@ -49,7 +49,7 @@
       display: flex;
       flex-direction: column;
     }
-
+ 
     /* Top bar */
     #topbar {
       position: fixed;
@@ -62,37 +62,37 @@
       padding: 18px 24px 0;
       pointer-events: none;
     }
-
+ 
     #top-left {
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
-
+ 
     .label-tag {
       font-size: 11px;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgb(0, 0, 0);
+      color: white;
       opacity: 0.5;
     }
-
+ 
     #sketch-title {
       font-size: 13px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgb(0, 0, 0);
+      color: white;
       font-style: italic;
     }
-
+ 
     #site-name {
       font-size: 13px;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgb(0, 0, 0);
+      color: white;
       text-align: right;
     }
-
+ 
     /* Bottom bar */
     #bottombar {
       position: fixed;
@@ -105,23 +105,23 @@
       padding: 0 24px 18px;
       pointer-events: none;
     }
-
+ 
     #caption {
       font-size: 12px;
       letter-spacing: 0.05em;
-      color: rgb(0, 0, 0);
+      color: white;
       font-style: italic;
       opacity: 0.7;
     }
-
+ 
     /* Page counter */
     #page-counter {
       font-size: 12px;
       letter-spacing: 0.1em;
-      color: rgb(0, 0, 0);
+      color: white;
       opacity: 0.5;
     }
-
+ 
     /* Sliders */
     #sliders {
       position: fixed;
@@ -134,22 +134,22 @@
       align-items: center;
       pointer-events: all;
     }
-
+ 
     .slider-group {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 4px;
     }
-
+ 
     .slider-label {
       font-size: 10px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgb(0, 0, 0);
+      color: white;
       opacity: 0.5;
     }
-
+ 
     input[type=range] {
       -webkit-appearance: none;
       width: 120px;
@@ -158,16 +158,16 @@
       outline: none;
       cursor: pointer;
     }
-
+ 
     input[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: rgb(0, 0, 0);
+      background: white;
       cursor: pointer;
     }
-
+ 
     /* Navigation arrows */
     .nav-arrow {
       position: fixed;
@@ -176,7 +176,7 @@
       z-index: 100;
       background: none;
       border: none;
-      color: rgb(0, 0, 0);
+      color: white;
       font-size: 28px;
       cursor: pointer;
       opacity: 0.4;
@@ -185,11 +185,11 @@
       padding: 20px;
       pointer-events: all;
     }
-
+ 
     .nav-arrow:hover { opacity: 1; }
     #arrow-left { left: 8px; }
     #arrow-right { right: 8px; }
-
+ 
     /* Preview box (top left) */
     #preview-box {
       position: fixed;
@@ -205,27 +205,27 @@
       align-items: center;
       justify-content: center;
     }
-
+ 
     #preview-label {
       font-size: 9px;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgb(0, 0, 0);
+      color: white;
       opacity: 0.4;
       position: absolute;
       top: 4px;
       left: 6px;
     }
-
+ 
     .preview-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: rgb(0, 0, 0);
+      background: white;
       opacity: 0.2;
       margin-top: 12px;
     }
-
+ 
     /* Sketch canvas container */
     #sketch-container {
       position: fixed;
@@ -234,11 +234,11 @@
       height: 100vh;
       z-index: 1;
     }
-
+ 
     #sketch-container canvas {
       display: block;
     }
-
+ 
     /* Sketch dots nav */
     #dots-nav {
       position: fixed;
@@ -250,23 +250,23 @@
       gap: 8px;
       align-items: center;
     }
-
+ 
     .dot {
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: rgb(0, 0, 0);
+      background: white;
       opacity: 0.2;
       transition: opacity 0.3s, transform 0.3s;
       cursor: pointer;
       pointer-events: all;
     }
-
+ 
     .dot.active {
       opacity: 1;
       transform: scale(1.4);
     }
-
+ 
     /* Page transition overlay */
     #transition {
       position: fixed;
@@ -279,15 +279,15 @@
       pointer-events: none;
       transition: opacity 0.3s;
     }
-
+ 
     #transition.fade-in { opacity: 1; pointer-events: all; }
   </style>
 </head>
 <body>
-
+ 
 <div id="cursor"></div>
 <div id="transition"></div>
-
+ 
 <!-- Top bar -->
 <div id="topbar">
   <div style="display:flex; flex-direction:column; gap:2px;">
@@ -303,14 +303,14 @@
   </div>
   <div id="site-name">Simon Says</div>
 </div>
-
+ 
 <!-- Navigation -->
 <button class="nav-arrow" id="arrow-left" onclick="navigate(-1)">&#8249;</button>
 <button class="nav-arrow" id="arrow-right" onclick="navigate(1)">&#8250;</button>
-
+ 
 <!-- Sketch canvas -->
 <div id="sketch-container"></div>
-
+ 
 <!-- Dots nav -->
 <div id="dots-nav">
   <div class="dot active" onclick="goTo(0)"></div>
@@ -318,13 +318,13 @@
   <div class="dot" onclick="goTo(2)"></div>
   <div class="dot" onclick="goTo(3)"></div>
 </div>
-
+ 
 <!-- Bottom bar -->
 <div id="bottombar">
   <div id="caption">—</div>
   <div id="page-counter">01 / 04</div>
 </div>
-
+ 
 <!-- Sliders -->
 <div id="sliders">
   <div class="slider-group">
@@ -338,31 +338,31 @@
       oninput="onSliderChange('weight', this.value)">
   </div>
 </div>
-
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-
+ 
 <script>
 // ─── Global slider values ───────────────────────────────────────────
 let globalFontSize = 20;
 let globalStrokeWeight = 1;
-
+ 
 function onSliderChange(type, val) {
   if (type === 'size') globalFontSize = parseFloat(val);
   if (type === 'weight') globalStrokeWeight = parseFloat(val);
 }
-
+ 
 // ─── Page metadata ──────────────────────────────────────────────────
 const pages = [
-  { title: 'Draw with finger',   caption: '(Magic intervention by Perrault)' },
-  { title: 'Pinch & scale',      caption: '(Ritual and quiet resilience from Grimms Fairy Tales, the story of Aschenputtel)' },
-  { title: 'Blow to scatter',    caption: '(Gesture of patience and endurance from Western Cinderella)' },
+  { title: 'Draw with finger',   caption: '(Trace a path with your index finger)' },
+  { title: 'Pinch & scale',      caption: '(Pinch thumb & index to resize and move)' },
+  { title: 'Blow to scatter',    caption: '(Blow into the camera to scatter letters)' },
   { title: 'Nose repels words',  caption: '(Move your face to push words away)' },
 ];
-
+ 
 let currentPage = 0;
 let currentSketch = null;
-
+ 
 function updateUI(index) {
   document.getElementById('sketch-title').textContent = pages[index].title;
   document.getElementById('caption').textContent = pages[index].caption;
@@ -372,12 +372,12 @@ function updateUI(index) {
     d.classList.toggle('active', i === index);
   });
 }
-
+ 
 function navigate(dir) {
   let next = (currentPage + dir + 4) % 4;
   goTo(next);
 }
-
+ 
 function goTo(index) {
   if (index === currentPage) return;
   const overlay = document.getElementById('transition');
@@ -389,7 +389,7 @@ function goTo(index) {
     overlay.classList.remove('fade-in');
   }, 300);
 }
-
+ 
 function loadSketch(index) {
   if (currentSketch) {
     currentSketch.remove();
@@ -400,13 +400,13 @@ function loadSketch(index) {
   const sketchFns = [sketchDraw, sketchPinch, sketchBlow, sketchNose];
   currentSketch = new p5(sketchFns[index], container);
 }
-
+ 
 // ─── Keyboard nav ───────────────────────────────────────────────────
 document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') navigate(1);
   if (e.key === 'ArrowLeft') navigate(-1);
 });
-
+ 
 // ─── Cursor ─────────────────────────────────────────────────────────
 document.addEventListener('mousemove', e => {
   const c = document.getElementById('cursor');
@@ -414,18 +414,18 @@ document.addEventListener('mousemove', e => {
   c.style.top = e.clientY + 'px';
 });
 </script>
-
+ 
 <!-- Sketches in instance mode -->
 <script src="sketch-draw.js"></script>
 <script src="sketch-pinch.js"></script>
 <script src="sketch-blow.js"></script>
 <script src="sketch-nose.js"></script>
-
+ 
 <script>
   // Load first sketch
   updateUI(0);
   loadSketch(0);
 </script>
-
+ 
 </body>
 </html>
