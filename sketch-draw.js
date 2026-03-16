@@ -47,8 +47,8 @@ function sketchDraw(p) {
       let pose = poses[0];
 
       // Draw connection lines
-      p.stroke(0, 30);
-      p.strokeWeight(20);
+      p.stroke(0, 20);
+      p.strokeWeight(50);
       for (let [a, b] of connections) {
         let kpA = pose.keypoints[a];
         let kpB = pose.keypoints[b];
