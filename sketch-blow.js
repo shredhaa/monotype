@@ -21,22 +21,47 @@ function sketchBlow(p) {
     [24,26],[26,28],[28,30],[30,32],[28,32]
   ];
  
-  p.setup = function() {
-    p.createCanvas(p.windowWidth, p.windowHeight);
-    video = p.createCapture(p.VIDEO, { flipped: true });
-    video.size(p.windowWidth, p.windowHeight);
-    video.hide();
-    faceMesh = ml5.faceMesh({ maxFaces: 1, refineLandmarks: false, flipped: true });
+  p.setup = function () {
+
+  p.createCanvas(p.windowWidth, p.windowHeight);
+
+  video = p.createCapture(p.VIDEO, { flipped: true });
+  video.size(p.windowWidth, p.windowHeight);
+  video.hide();
+
+
+  // ---------- FACE MESH FIRST ----------
+  faceMesh = ml5.faceMesh({
+    maxFaces: 1,
+    refineLandmarks: true,
+    flipped: true
+  });
+
+   faceMesh = ml5.faceMesh({ maxFaces: 1, refineLandmarks: false, flipped: true });
     faceMesh.ready.then(() => {
+      console.log("FaceMesh ready");
       faceMesh.detectStart(video, r => { faces = r; });
-    });
-    bodyPose = ml5.bodyPose("BlazePose", { flipped: true }, () => {
-      console.log("BlazePose ready");
-      bodyPose.detectStart(video, r => poses = r);
-    });
-    setupBox();
-    initWords();
-  };
+
+    // ---------- START BLAZEPOSE AFTER ----------
+    bodyPose = ml5.bodyPose(
+      "BlazePose",
+      { flipped: true },
+      () => {
+
+        console.log("BlazePose ready");
+
+        bodyPose.detectStart(video, r => poses = r);
+
+      }
+    );
+
+  });
+
+
+  setupBox();
+  initWords();
+
+};
  
   function setupBox() {
     boxX = p.width * 0.13;
