@@ -31,9 +31,8 @@ function sketchBlow(p) {
       console.log("BlazePose ready");
       bodyPose.detectStart(video, r => poses = r);
     });
-    faceMesh = ml5.faceMesh({ flipped: true }, () => {
-      faceMesh.detectStart(video, r => faces = r);
-    });
+    faceMesh = ml5.faceMesh({ maxFaces: 1, refineLandmarks: false, flipped: true });
+    faceMesh.detectStart(video, r => { faces = r; });
     setupBox();
     initWords();
   };
